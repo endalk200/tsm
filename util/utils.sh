@@ -1,12 +1,12 @@
 #! /bin/sh
 
-TSM_INSTALLATION_ROOT="$HOME/.config/.tsm/"
+TSM_INSTALLATION_ROOT="$HOME/.config/.tsm"
 
 if [ -z "$TSM_ROOT" ]; then
-  export TSM_ROOT="$HOME/.config/.tsm-sessions/"
+  export TSM_ROOT="$HOME/.config/.tsm-sessions"
   echo "TSM_ROOT is not set. Setting it to: $TSM_ROOT"
 else
-  echo "TSM_ROOT is already set to: $TSM_ROOT skipping"
+  export TSM_ROOT="$HOME/.config/.tsm-sessions"
 fi
 
 show_help() {

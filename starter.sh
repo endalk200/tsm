@@ -3,10 +3,8 @@
 project_root ~/src/my_project
 session_name "my_project"
 
-# first, create your session
 new_session
 
-# then, layout your session
 rename_window "editor"
 run_command "nvim"
 

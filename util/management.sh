@@ -9,8 +9,10 @@ check_for_project() {
   local project_file="$TSM_ROOT/${1}.sh"
 
   if [ ! -f "$project_file" ]; then
+    echo "Project ${1} doesn't exist"
     return 1
   else
+    echo "Project ${1} exists"
     return 0
   fi
 }
@@ -26,7 +28,7 @@ EOF
   fi
 
 
-  if [ -f "${1}".sh ]; then
+  if [ -f "$TSM_ROOT/${1}".sh ]; then
     cat << EOF
       Project already exists.
 EOF
@@ -41,7 +43,7 @@ load_project() {
   # load a project
   # argument is the project name
   if check_for_project "${1}"; then
-    . "${1}".sh
+    . "$TSM_ROOT/${1}".sh
   else
     return 1
   fi
@@ -51,7 +53,7 @@ edit_project() {
   # edit a project
   # argument is the project name
   if check_for_project "$1"; then
-    "$EDITOR" "${1}".sh
+    "$EDITOR" "$TSM_ROOT/${1}".sh
   else
     return 1
   fi

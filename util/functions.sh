@@ -39,7 +39,6 @@ split_vertical() {
 
 split_horizontal() {
   tmux split-window -t "$SESSION_NAME:$CURRENT_WINDOW.$CURRENT_PANE" -c "$ROOT" -h -l $1
-
   set_current_pane $(($CURRENT_PANE + 1))
 }
 

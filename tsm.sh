@@ -32,7 +32,7 @@ tsm() {
     load | load_project)
       if [ "$2" != "" ]; then
         shift
-        load_project "${LAYOUT_ROOT}/${1}"
+        load_project "${1}"
       else
         print_error "$1"
         return 1
