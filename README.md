@@ -6,8 +6,32 @@ where you keep the configs wether you want to track them in version control or k
 
 ## Installation
 
-Clone the repo.
+Install the shell script using the following curl command
 
-    git clone https://github.com/endalk200/tsm.git $HOME/.config/.tsm/
+    curl -O https://raw.githubusercontent.com/endalk200/tsm/main/install.sh | bash
 
-    curl -O https://raw.githubusercontent.com/username/repo/main/install.sh
+The above installation script will put the tsm scripts in your `$HOME/.config/tsm/` directory.
+
+## Usage
+
+To create a new tmux session configuration run:
+
+    tsm new example_project
+
+This will create a new tsm configuration directory and file `$HOME/.config/.tsm-sessions/example_project.sh`.
+After the file has been created it will open up the file in your default editor for you to customize according
+to your need.
+
+To check if a project exists or not run:
+
+    tsm check example_project
+
+To load a project based on the configuration you created
+
+    tsm load example_project
+
+To edit a project configuration you can run:
+
+    tsm edit example_project
+
+This will open the project configuration file from `$HOME/.config/.tsm-sessions/` in your default code editor.
