@@ -4,7 +4,7 @@
 . $HOME/.config/tsm/util/functions.sh
 . $HOME/.config/tsm/util/utils.sh
 
-shmux() {
+tsm() {
   while :; do
     case $1 in
     -h | -\? | --help | help)
